@@ -1,0 +1,1 @@
+flame -i supervisor -r . -x supervisor/tests -ss operator_random_threshold -to 10

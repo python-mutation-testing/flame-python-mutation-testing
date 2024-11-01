@@ -1,0 +1,1 @@
+mutmut run --paths-to-mutate rest_framework --use-coverage

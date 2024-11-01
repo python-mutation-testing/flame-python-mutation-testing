@@ -1,0 +1,1 @@
+mutmut run --paths-to-mutate pyquery --use-coverage

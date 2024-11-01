@@ -1,0 +1,59 @@
+repos:
+  - repo: local
+    hooks:
+      - id: static_word_checks
+        args:
+          - '--replace'
+        entry: python -m tools.static_word_checks
+        language: system
+        name: Static Word Checks
+        pass_filenames: false
+        types: [ python ]
+
+      - id: check_documentation
+        entry: python -m tools.check_documentation
+        language: system
+        name: Check Documentation
+        pass_filenames: false
+        types: [ python ]
+
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.6.0
+    hooks:
+      - id: check-added-large-files
+      - id: check-executables-have-shebangs
+      - id: check-shebang-scripts-are-executable
+      - id: check-toml
+      - id: check-yaml
+      - id: end-of-file-fixer
+      - id: mixed-line-ending
+        args: [ --fix=no ]
+      - id: name-tests-test
+        args: [ --pytest-test-first ]
+        files: ^tests/integration/.*\.py|tests/unit/.*\.py$
+      - id: sort-simple-yaml
+        files: ^(\.github/workflows/.*\.ya?ml|\.readthedocs.ya?ml)$
+      - id: trailing-whitespace
+
+  - repo: https://github.com/pappasam/toml-sort
+    rev: v0.23.1
+    hooks:
+      - id: toml-sort-fix
+        files: ^(.*\.toml)$
+
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.4.4
+    hooks:
+      - id: ruff
+        args: [ --exit-non-zero-on-fix, --fix ]
+        files: ^(praw/.*.py)$
+
+  - repo: https://github.com/psf/black
+    hooks:
+      - id: black
+    rev: 24.4.2
+
+  - repo: https://github.com/LilSpazJoekp/docstrfmt
+    hooks:
+      - id: docstrfmt
+    rev: v1.6.1

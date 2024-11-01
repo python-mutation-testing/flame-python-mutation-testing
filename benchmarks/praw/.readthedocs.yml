@@ -1,0 +1,10 @@
+formats:
+  - htmlzip
+python:
+  install:
+    - method: pip
+      extra_requirements:
+        - readthedocs
+      path: .
+  version: 3.8
+version: 2

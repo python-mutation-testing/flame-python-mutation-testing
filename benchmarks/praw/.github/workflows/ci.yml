@@ -1,0 +1,10 @@
+jobs:
+  ci:
+    name: CI
+    secrets: inherit
+    uses: praw-dev/.github/.github/workflows/ci.yml@main
+    with:
+      package: praw
+name: CI
+on: [ pull_request, push ]
+permissions: read-all

@@ -1,0 +1,1 @@
+mutmut run --tests-dir schedule --use-coverage

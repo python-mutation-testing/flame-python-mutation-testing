@@ -1,0 +1,14 @@
+.pytest_cache
+.*.swp
+.DS_Store
+*.pyc
+*.egg-info
+*.egg
+*.eggs
+*.cache
+_libvips.* 
+dist
+doc/build
+build
+.tox
+tmp
